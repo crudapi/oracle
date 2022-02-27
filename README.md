@@ -16,9 +16,7 @@ docker rm -f oracle
 docker run --name oracle \
     --restart=always \
     -p 1521:1521 -p 5500:5500 \
-    -e ORACLE_SID=ORCLCDB \
-    -e ORACLE_PDB=ORCLPDB1 \
-    -e ORACLE_PWD=crudapi \
+    -e ORACLE_PWD=Crudapi1521 \
     -e ORACLE_EDITION=enterprise \
     -e ORACLE_CHARACTERSET=AL32UTF8 \
     -e ENABLE_ARCHIVELOG=true \
