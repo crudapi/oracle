@@ -4,6 +4,10 @@
 ```bash
 git clone git@github.com:oracle/docker-images.git
 cd docker-images/OracleDatabase/SingleInstance/dockerfiles
+
+./buildContainerImage.sh -v 18.3.0 -t oracle:18.3.0 -e -i -o '--build-arg SLIMMING=false'
+./buildContainerImage.sh -v 18.4.0 -t oracle:18.4.0 -x -i -o '--build-arg SLIMMING=false'
+./buildContainerImage.sh -v 19.3.0 -t oracle:19.3.0 -e -i -o '--build-arg SLIMMING=false'
 ./buildContainerImage.sh -v 21.3.0 -t oracle:21.3.0 -e -i -o '--build-arg SLIMMING=false'
 ```
 
