@@ -21,7 +21,6 @@ docker run --name oracle \
     --restart=always \
     -p 1521:1521 -p 5500:5500 \
     -e ORACLE_PWD=Crudapi1521 \
-    -e ORACLE_EDITION=enterprise \
     -e ORACLE_CHARACTERSET=AL32UTF8 \
     -e ENABLE_ARCHIVELOG=true \
     -v /opt/crudapi/oracle:/opt/oracle/oradata \
@@ -29,6 +28,14 @@ docker run --name oracle \
 
 docker logs -f oracle
 ``` 
+
+### schema
+```bash
+create user crudapi identified by crudapi;
+create tablespace tbs_crudapi datafile '/opt/oracle/oradata/XE/tbs_crudapi.dbf' size 2048M;
+alter user crudapi default tablespace tbs_crudapi;
+grant create session, create table, unlimited tablespace to crudapi;
+```
 
 ## docs
 [Oracle Database container images](https://github.com/oracle/docker-images/blob/main/OracleDatabase/SingleInstance/README.md)
