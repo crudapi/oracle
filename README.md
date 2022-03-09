@@ -24,7 +24,7 @@ docker run --name oracle \
     -e ORACLE_CHARACTERSET=AL32UTF8 \
     -e ENABLE_ARCHIVELOG=true \
     -v /opt/crudapi/oracle:/opt/oracle/oradata \
-    -d oracle:21.3.0
+    -d oracle:18.4.0
 
 docker logs -f oracle
 ``` 
