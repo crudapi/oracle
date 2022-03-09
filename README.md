@@ -35,8 +35,7 @@ create tablespace tbs_crudapi datafile '/opt/oracle/oradata/XE/tbs_crudapi.dbf' 
 drop user crudapi;
 create user crudapi identified by crudapi;
 alter user crudapi default tablespace tbs_crudapi;
-grant connect, resource, to crudapi;
-grant dba to crudapi;
+grant connect, resource, dba to crudapi;
 ```
 
 ## docs
