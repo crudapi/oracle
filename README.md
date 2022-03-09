@@ -31,10 +31,12 @@ docker logs -f oracle
 
 ### schema
 ```bash
-create user crudapi identified by crudapi;
 create tablespace tbs_crudapi datafile '/opt/oracle/oradata/XE/tbs_crudapi.dbf' size 2048M;
+drop user crudapi;
+create user crudapi identified by crudapi;
 alter user crudapi default tablespace tbs_crudapi;
-grant create session, create table, unlimited tablespace to crudapi;
+grant connect, resource, to crudapi;
+grant dba to crudapi;
 ```
 
 ## docs
